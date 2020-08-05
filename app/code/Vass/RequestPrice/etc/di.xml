@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+
+    <virtualType name="PriceGridDataProvider" type="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider">
+        <arguments>
+            <argument name="collection" xsi:type="object" shared="false">Vass\RequestPrice\Model\ResourceModel\Price\Collection</argument>
+            <argument name="filterPool" xsi:type="object" shared="false">PriceGridFilterPool</argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="Vass\RequestPrice\Model\Resource\Price\Grid\Collection"
+                 type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">price_request</argument>
+            <argument name="resourceModel" xsi:type="string">Vass\RequestPrice\Model\ResourceModel\Price</argument>
+        </arguments>
+    </virtualType>
+
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="price_grid_listing_data_source" xsi:type="string">Vass\RequestPrice\Model\Resource\Price\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+
+</config>

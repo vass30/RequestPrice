@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Vass_RequestPrice::request_price" title="Price Request" translate="title" module="Vass_RequestPrice" sortOrder="200" action="price/grid/index" parent="Magento_Customer::customer"
+             resource="Vass_RequestPrice::request_price"/>
+    </menu>
+</config>
