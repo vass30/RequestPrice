@@ -6,7 +6,7 @@ define(
     ],
     function ($, modal) {
         jQuery(document).ready(function () {
-            var options = {
+            let options = {
                 type: 'popup',
                 responsive: true,
                 innerScroll: true,
@@ -19,7 +19,7 @@ define(
                     }
                 }]
             };
-            var openModal = modal(options, $('#popup-modal'));
+            let openModal = modal(options, $('#popup-modal'));
 
             $('body').on('click', '.open-contact-form', function () {
 
@@ -27,7 +27,7 @@ define(
                 $('.static-block-message').hide();
                 $('#popup-modal').modal('openModal');
 
-                var isLoggedIn = jQuery('.authorization-link > a').attr('href').indexOf('/login') < 0;
+                let isLoggedIn = jQuery('.authorization-link > a').attr('href').indexOf('/login') < 0;
                 if (isLoggedIn) {
                     // alert("LOGGED");
                 } else {
@@ -45,10 +45,10 @@ define(
                 e.preventDefault();
                 e.stopImmediatePropagation();
 
-                var dataForm = $('#contact-form');
+                let dataForm = $('#contact-form');
                 dataForm.mage('validation', {});
 
-                var status = dataForm.validation('isValid');
+                let status = dataForm.validation('isValid');
                 if(status) {
                     console.log('form is validated');
                     jQuery.ajax({

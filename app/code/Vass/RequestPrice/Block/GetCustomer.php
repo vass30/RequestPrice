@@ -5,7 +5,7 @@
 
 namespace Vass\RequestPrice\Block;
 
-use VassMagento\Framework\App\Action\Action;
+use Magento\Framework\App\Action\Action;
 use Magento\Framework\App\Action\Context;
 use Magento\Framework\App\ResponseInterface;
 use Magento\Framework\View\Element\Template;
@@ -21,8 +21,8 @@ class GetCustomer extends Action
         $this->customer = $customer;
         parent::__construct($context);
     }
-//
-    public function yourMethodName()
+
+    public function execute()
     {
         $customer = $this -> customer;
         $customerName = $customer -> getName();
@@ -32,7 +32,5 @@ class GetCustomer extends Action
         var_dump($customerd);
         var_dump($customerId);
         exit();
-//        return $customerName;
-//        //You will get all basic detail with this $customer object
     }
 }
